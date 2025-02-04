@@ -24,3 +24,9 @@ async def upload_model_endpoint(model_zip: UploadFile = File(...)):
 async def delete_model_endpoint(model_name: str):
     delete_model(model_name)
     return {"message": f"Modelo '{model_name}' eliminado correctamente"}
+
+
+@router.get("/list/")
+def list_models_endpoint():
+    models = list_models()
+    return {"models": models}
