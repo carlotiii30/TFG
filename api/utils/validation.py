@@ -1,4 +1,5 @@
 import os
+
 from fastapi import HTTPException
 
 EXPECTED_STRUCTURE = {
