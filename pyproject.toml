@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "tfg"
+version = "0.1.0"
+description = ""
+authors = ["Carlota de la Vega <carlotadlavega@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+torch = "2.0.1"
+torchvision = "0.15.2"
+torchaudio = "2.0.2"
+requests = "^2.32.3"
+Pillow = "^11.1.0"
+numpy = "<2.0"
+pytorch-pretrained-biggan = "^0.1.1"
+scipy = "^1.15.0"
+nltk = "^3.9.1"
+diffusers = "^0.30.3"
+transformers = "^4.45.2"
+accelerate = "^1.0.1"
+fastapi = "^0.115.7"
+uvicorn = "^0.34.0"
+python-multipart = "^0.0.20"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
