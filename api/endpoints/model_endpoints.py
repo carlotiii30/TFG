@@ -18,3 +18,9 @@ async def upload_model_endpoint(model_zip: UploadFile = File(...)):
         "message": "Modelo subido exitosamente",
         "model_dir": model_dir_name,
     }
+
+
+@router.delete("/delete/{model_name}")
+async def delete_model_endpoint(model_name: str):
+    delete_model(model_name)
+    return {"message": f"Modelo '{model_name}' eliminado correctamente"}
