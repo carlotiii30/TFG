@@ -16,7 +16,7 @@ help:
 .PHONY: setup
 setup:
 	$(POETRY) env use $(PYTHON)
-	$(POETRY) install
+	$(POETRY) install --no-root
 
 # Iniciar el servidor
 .PHONY: serve
