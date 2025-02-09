@@ -4,6 +4,9 @@ version = "0.1.0"
 description = ""
 authors = ["Carlota de la Vega <carlotadlavega@gmail.com>"]
 readme = "README.md"
+packages = [
+    { include = "tfg" }
+]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -23,7 +26,6 @@ fastapi = "^0.115.7"
 uvicorn = "^0.34.0"
 python-multipart = "^0.0.20"
 ruff = "^0.9.5"
-
 
 [build-system]
 requires = ["poetry-core"]
