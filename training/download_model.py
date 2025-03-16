@@ -1,14 +1,12 @@
 from diffusers import StableDiffusionPipeline
 
-# Nombre del modelo en Hugging Face
-model_name = "CompVis/stable-diffusion-v1-4"
+# Ruta donde se guardará el modelo
+model_path = "./data/stable/models--CompVis--stable-diffusion-v1-4"
 
-# Descargar del modelo
-pipe = StableDiffusionPipeline.from_pretrained(
-    model_name,
-    cache_dir="./data/stable",
-    force_download=True,
-    local_files_only=False,
-)
+# Descargar el modelo de Hugging Face
+pipe = StableDiffusionPipeline.from_pretrained("CompVis/stable-diffusion-v1-4")
 
-print("Modelo descargado correctamente.")
+# Guardar el modelo en la ruta especificada
+pipe.save_pretrained(model_path)
+
+print(f"Modelo descargado y guardado en {model_path}")
