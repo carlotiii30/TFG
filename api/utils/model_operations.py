@@ -36,4 +36,8 @@ def delete_model(model_name: str):
 
 
 def list_models() -> list:
-    return os.listdir(MODEL_DIR)
+    return [
+        name
+        for name in os.listdir(MODEL_DIR)
+        if os.path.isdir(os.path.join(MODEL_DIR, name))
+    ]

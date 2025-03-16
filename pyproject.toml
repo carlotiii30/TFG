@@ -26,6 +26,8 @@ fastapi = "^0.115.7"
 uvicorn = "^0.34.0"
 python-multipart = "^0.0.20"
 ruff = "^0.9.5"
+datasets = "^3.2.0"
+peft = "^0.14.0"
 
 [build-system]
 requires = ["poetry-core"]
