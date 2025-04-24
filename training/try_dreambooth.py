@@ -14,7 +14,7 @@ dataset_url = "http://vision.stanford.edu/aditya86/ImageNetDogs/images.tar"
 dataset_tar = "images.tar"
 dataset_folder = "Images"
 razas = ["n02099601-golden_retriever", "n02088238-basset", "n02091134-whippet"]
-num_images_por_raza = 20
+num_images_por_raza = 50
 output_path = "dog_images"
 output_model_dir = "stable-dog-output"
 generadas_dir = "generadas"
@@ -57,7 +57,7 @@ train_command = [
     "--learning_rate=5e-6",
     "--lr_scheduler=constant",
     "--lr_warmup_steps=0",
-    "--max_train_steps=1000",
+    "--max_train_steps=2000",
     "--mixed_precision=fp16" if torch.cuda.is_available() else "--mixed_precision=no",
     # "--use_8bit_adam"
 ]
