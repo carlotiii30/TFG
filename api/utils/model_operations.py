@@ -15,8 +15,8 @@ def upload_model(model_zip_path: str, model_zip_file) -> str:
 
     with zipfile.ZipFile(model_zip_path, "r") as zip_ref:
         for member in zip_ref.namelist():
-            member_path = os.path.join(MODEL_DIR, member)
-            if not os.path.commonprefix([MODEL_DIR, os.path.abspath(member_path)]) == os.path.abspath(MODEL_DIR):
+            member_path = Path(MODEL_DIR) / member
+            if not Path(member_path).resolve().is_relative_to(Path(MODEL_DIR).resolve()):
                 raise HTTPException(status_code=400, detail="Invalid file path in ZIP archive")
             zip_ref.extract(member, MODEL_DIR)
 
