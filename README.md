@@ -13,3 +13,7 @@ Se ha adaptado y entrenado el modelo Stable Diffusion utilizando la técnica de 
 ## Dataset utilizado: Stanford Dogs
 
 El dataset **Stanford Dogs** es un conjunto de datos de imágenes ampliamente utilizado en tareas de visión por computador, especialmente en clasificación y reconocimiento de razas de perros. Contiene más de 20.000 imágenes de alta calidad, distribuidas en 120 razas diferentes de perros, con anotaciones precisas para cada imagen. Este dataset es ideal para entrenar y evaluar modelos de aprendizaje profundo en tareas de clasificación de imágenes y generación de contenido relacionado con perros.
+
+## Disponibilización mediante API
+
+Para facilitar el uso y la integración del modelo, se ha desarrollado una API utilizando **FastAPI**. Esta API permite exponer las funcionalidades principales del modelo, como la generación de imágenes y la gestión de modelos personalizados, de forma sencilla y accesible a través de peticiones HTTP.
