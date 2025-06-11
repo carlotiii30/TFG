@@ -1,14 +1,11 @@
 import os
-import zipfile
 from pathlib import Path
 from PIL import Image
 import shutil
 import torch
-from tqdm import tqdm
 from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms
 from diffusers import (
-    StableDiffusionPipeline,
     DDPMScheduler,
     UNet2DConditionModel,
     AutoencoderKL,
@@ -148,7 +145,7 @@ def test_batch_size(dataset, device, start=1, step=1):
                 torch.cuda.empty_cache()
                 break
             else:
-                traceback.print_exc()
+                e.__traceback__.print_exc()
                 break
 
 
