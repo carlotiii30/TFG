@@ -30,7 +30,7 @@ def delete_model(model_name: str):
     model_path = os.path.join(MODEL_DIR, model_name)
 
     if not os.path.exists(model_path):
-        raise HTTPException(status_code=404, detail="Modelo no encontrado")
+        raise HTTPException(status_code=404, detail="Model not found")
 
     shutil.rmtree(model_path)
 
