@@ -47,6 +47,6 @@ def download_image(image_name: str) -> FileResponse:
     image_path = os.path.join(OUTPUT_DIR, image_name)
 
     if not os.path.exists(image_path):
-        raise HTTPException(status_code=404, detail="Imagen no encontrada")
+        raise HTTPException(status_code=404, detail="Image not found")
 
     return FileResponse(image_path)

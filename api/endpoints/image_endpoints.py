@@ -23,7 +23,7 @@ async def generate_image_endpoint(request: GenerateRequest):
         num_inference_steps=request.num_inference_steps,
         guidance_scale=request.guidance_scale,
     )
-    return {"message": "Imagen generada exitosamente", "image_path": image_path}
+    return {"message": "Image generated successfully", "image_path": image_path}
 
 
 @router.get("/download/{image_name}")
