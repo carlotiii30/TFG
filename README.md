@@ -30,7 +30,7 @@ Puedes acceder a la documentación interactiva de la API en http://localhost:800
 ### Ejemplo de petición para generar una imagen
 Puedes usar curl o herramientas como Postman para hacer peticiones a la API. Por ejemplo, para generar una imagen:
 ```bash
-curl -X POST "http://localhost:8000/generate" -H "Content-Type: application/json" -d '{"prompt": "un perro golden retriever en la playa"}'
+curl -X POST "http://localhost:8000/images/generate" -H "Content-Type: application/json" -d '{"prompt": "A golden retriever running on the beach"}'
 ```
 
 Consulta la documentación en /docs para ver todos los endpoints disponibles y sus parámetros.
