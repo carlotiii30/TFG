@@ -14,7 +14,7 @@ dataset_url = "http://vision.stanford.edu/aditya86/ImageNetDogs/images.tar"
 dataset_tar = "images.tar"
 dataset_folder = "Images"
 razas = ["n02099601-golden_retriever", "n02088238-basset", "n02091134-whippet"]
-num_images_por_raza = 50
+num_images_por_raza = 100
 output_path = "dog_images"
 output_model_dir = "stable-dog-output"
 generadas_dir = "generadas"
@@ -46,7 +46,8 @@ print(f"✅ Copiadas {num_images_por_raza * len(razas)} imágenes a '{output_pat
 print("🚀 Entrenando con DreamBooth REAL usando diffusers...")
 
 train_command = [
-    "python", "diffusers/examples/dreambooth/train_dreambooth.py",
+    "python",
+    "diffusers/examples/dreambooth/train_dreambooth.py",
     "--pretrained_model_name_or_path=CompVis/stable-diffusion-v1-4",
     f"--instance_data_dir={output_path}",
     f"--output_dir={output_model_dir}",
@@ -57,9 +58,9 @@ train_command = [
     "--learning_rate=5e-6",
     "--lr_scheduler=constant",
     "--lr_warmup_steps=0",
-    "--max_train_steps=2000",
+    "--max_train_steps=1000",
     "--mixed_precision=fp16" if torch.cuda.is_available() else "--mixed_precision=no",
-    # "--use_8bit_adam"
+    "--use_8bit_adam",
 ]
 
 subprocess.run(train_command, check=True)
@@ -69,14 +70,14 @@ print("✅ Entrenamiento finalizado y modelo guardado.")
 print("🖼️ Generando imágenes de prueba con el modelo entrenado...")
 pipe = StableDiffusionPipeline.from_pretrained(
     output_model_dir,
-    torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32
+    torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
 ).to(device)
 
 Path(generadas_dir).mkdir(exist_ok=True)
 
 for raza_folder in razas:
     raza_nombre = raza_folder.split("-")[-1].replace("_", " ")
-    prompt = f"a photo of a sks {raza_nombre} wearing sunglasses"
+    prompt = f"a photo of a sks {raza_nombre}"
     image = pipe(prompt).images[0]
     out_path = os.path.join(generadas_dir, f"{raza_nombre}.png")
     image.save(out_path)
