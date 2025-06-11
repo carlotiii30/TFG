@@ -28,7 +28,7 @@ def validate_model_structure(model_path: str):
             )
     for dir_name, files in EXPECTED_STRUCTURE.items():
         dir_path = os.path.join(model_path, dir_name)
-        if not os.path.exists(dir_path):
+        if not os.path.isdir(dir_path):
             raise HTTPException(
                 status_code=400, detail=f"Missing directory: {dir_name}"
             )
