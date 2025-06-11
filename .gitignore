@@ -174,3 +174,5 @@ cython_debug/
 data
 models
 outputs
+Images
+dog_images
