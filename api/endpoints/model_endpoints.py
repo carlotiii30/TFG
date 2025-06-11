@@ -13,7 +13,8 @@ os.makedirs(MODEL_DIR, exist_ok=True)
 
 @router.post("/upload/")
 async def upload_model_endpoint(model_zip: UploadFile = File(...)):
-    model_zip_path = os.path.join(MODEL_DIR, model_zip.filename)
+    sanitized_filename = os.path.basename(model_zip.filename)
+    model_zip_path = os.path.join(MODEL_DIR, sanitized_filename)
     model_dir_name = upload_model(model_zip_path, model_zip.file)
     return {
         "filename": model_zip.filename,
