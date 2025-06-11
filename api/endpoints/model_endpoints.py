@@ -8,6 +8,8 @@ router = APIRouter()
 
 MODEL_DIR = "./models"
 
+os.makedirs(MODEL_DIR, exist_ok=True)
+
 
 @router.post("/upload/")
 async def upload_model_endpoint(model_zip: UploadFile = File(...)):

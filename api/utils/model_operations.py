@@ -8,6 +8,8 @@ from api.utils.validation import validate_model_structure
 
 MODEL_DIR = "./models"
 
+os.makedirs(MODEL_DIR, exist_ok=True)
+
 
 def upload_model(model_zip_path: str, model_zip_file) -> str:
     with open(model_zip_path, "wb") as buffer:
@@ -16,8 +18,12 @@ def upload_model(model_zip_path: str, model_zip_file) -> str:
     with zipfile.ZipFile(model_zip_path, "r") as zip_ref:
         for member in zip_ref.namelist():
             member_path = os.path.join(MODEL_DIR, member)
-            if not os.path.commonprefix([MODEL_DIR, os.path.abspath(member_path)]) == os.path.abspath(MODEL_DIR):
-                raise HTTPException(status_code=400, detail="Invalid file path in ZIP archive")
+            if not os.path.commonprefix(
+                [MODEL_DIR, os.path.abspath(member_path)]
+            ) == os.path.abspath(MODEL_DIR):
+                raise HTTPException(
+                    status_code=400, detail="Invalid file path in ZIP archive"
+                )
             zip_ref.extract(member, MODEL_DIR)
 
     model_dir_name = os.path.basename(model_zip_path).replace(".zip", "")

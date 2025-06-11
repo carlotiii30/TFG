@@ -9,6 +9,9 @@ from fastapi.responses import FileResponse
 OUTPUT_DIR = "./outputs"
 MODEL_DIR = "./models"
 
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+os.makedirs(MODEL_DIR, exist_ok=True)
+
 
 def generate_image(
     model_name: str, prompt: str, num_inference_steps: int, guidance_scale: float
