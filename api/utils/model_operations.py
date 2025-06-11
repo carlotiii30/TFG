@@ -27,11 +27,21 @@ def upload_model(model_zip_path: str, model_zip_file) -> str:
                 raise HTTPException(
                     status_code=400, detail="Invalid file path in ZIP archive"
                 )
-            zip_ref.extract(member, MODEL_DIR)
-
     model_dir_name = os.path.basename(model_zip_path).replace(".zip", "")
     model_path = os.path.join(MODEL_DIR, model_dir_name)
+    os.makedirs(model_path, exist_ok=True)
 
+    for member in zip_ref.namelist():
+        member_path = Path(model_path) / member
+        if (
+            not Path(member_path)
+            .resolve()
+            .is_relative_to(Path(model_path).resolve())
+        ):
+            raise HTTPException(
+                status_code=400, detail="Invalid file path in ZIP archive"
+            )
+        zip_ref.extract(member, model_path)
     validate_model_structure(model_path)
 
     os.remove(model_zip_path)
