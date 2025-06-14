@@ -22,9 +22,9 @@ inputs = processor(
 with torch.no_grad():
     outputs = model(**inputs)
     logits_per_image = outputs.logits_per_image
-    probs = logits_per_image.softmax(dim=0)  # softmax sobre el batch
+    probs = logits_per_image.softmax(dim=0)
 
-# Mostrar los resultados
+
 clip_score_before = probs[0][0].item()
 clip_score_after = probs[1][0].item()
 
