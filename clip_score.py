@@ -8,9 +8,9 @@ model = CLIPModel.from_pretrained(model_id)
 processor = CLIPProcessor.from_pretrained(model_id)
 
 # Rutas de las imágenes y el prompt
-image_before = Image.open("golden_retriever_before.png").convert("RGB")
-image_after = Image.open("golden_retriever_after.png").convert("RGB")
-prompt = "a photo of a golden retriever dog in a park"
+image_before = Image.open("man_before.png").convert("RGB")
+image_after = Image.open("man_after.png").convert("RGB")
+prompt = "a man sitting on a bench in a park"
 
 
 # Procesar ambas imágenes en el mismo batch con el mismo texto
