@@ -1,7 +1,6 @@
 # TFG
 Trabajo de Fin de Grado de Ingeniería Informática
 
-
 ## Quickstart: Instalación y uso
 
 ### 1. Instalación de dependencias
@@ -53,3 +52,9 @@ El dataset **Stanford Dogs** es un conjunto de datos de imágenes ampliamente ut
 ### Disponibilización mediante API
 
 Para facilitar el uso y la integración del modelo, se ha desarrollado una API utilizando **FastAPI**. Esta API permite exponer las funcionalidades principales del modelo, como la generación de imágenes y la gestión de modelos personalizados, de forma sencilla y accesible a través de peticiones HTTP.
+
+
+## Documentos relacionados
+- Interfaz en Java para el uso de la JMR: https://github.com/carlotiii30/TFG-UI
+- Memoria en Latex: https://github.com/carlotiii30/TFG-Memoria
+- Descriptor de la JMR: https://github.com/carlotiii30/TFG-JMR
