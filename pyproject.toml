@@ -10,41 +10,27 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.10"
-
-# PyTorch stack
-torch = "^2.2.0"
-torchvision = "0.17.0"
-torchaudio = "2.2.0"
-
-# básicos
+torch = "2.2.2"
+torchvision = "0.17.2"
+torchaudio = "2.2.2"
 requests = "^2.32.3"
 Pillow = "11.1.0"
 numpy = "<2.0"
 pytorch-pretrained-biggan = "^0.1.1"
 scipy = "^1.15.0"
 nltk = "^3.9.1"
-
-# HuggingFace
-diffusers = "0.27.2"
-transformers = ">=4.45.2"
-accelerate = ">=1.0.1"
-peft = ">=0.17.0"
-huggingface-hub = ">=0.20.0"
-
-# backend API
+diffusers = "^0.31.0"
+transformers = "4.45.2"
+accelerate = "1.0.1"
 fastapi = "^0.115.7"
 uvicorn = "^0.34.0"
 python-multipart = "^0.0.20"
-
-# utilidades
 ruff = "^0.9.5"
-datasets = ">=3.2.0"
-
-# opcional: solo en GPU Nvidia
-bitsandbytes = { version = "^0.45.5", optional = true }
-
-[tool.poetry.extras]
-cuda = ["bitsandbytes"]
+datasets = "^3.2.0"
+peft = "^0.14.0"
+huggingface-hub = ">=0.23.2,<1.0"
+safetensors = "^0.5.3"
+wget = "^3.2"
 
 [build-system]
 requires = ["poetry-core"]
