@@ -5,7 +5,7 @@ from pathlib import Path
 
 from fastapi import HTTPException
 
-from api.utils.validation import validate_model_structure
+from tfg.api.utils.validation import validate_model_structure
 
 MODEL_DIR = "./models"
 os.makedirs(MODEL_DIR, exist_ok=True)

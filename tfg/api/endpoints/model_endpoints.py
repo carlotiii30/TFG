@@ -2,7 +2,7 @@ import os
 
 from fastapi import APIRouter, File, UploadFile
 
-from api.utils.model_operations import delete_model, list_models, upload_model
+from tfg.api.utils.model_operations import delete_model, list_models, upload_model
 
 router = APIRouter()
 

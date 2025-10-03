@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from pydantic import BaseModel
 
-from api.utils.image_operations import download_image, generate_image
+from tfg.api.utils.image_operations import download_image, generate_image
 
 router = APIRouter()
 
