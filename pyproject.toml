@@ -28,9 +28,10 @@ python-multipart = "^0.0.20"
 ruff = "^0.9.5"
 datasets = "^3.2.0"
 peft = "^0.15.0"
+bitsandbytes = { version = "^0.45.5", optional = true }
 
 [tool.poetry.extras]
-cuda = ["bitsandbytes (^0.45.5)"]
+cuda = ["bitsandbytes"]
 
 [build-system]
 requires = ["poetry-core"]
