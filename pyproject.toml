@@ -19,15 +19,23 @@ numpy = "<2.0"
 pytorch-pretrained-biggan = "^0.1.1"
 scipy = "^1.15.0"
 nltk = "^3.9.1"
-diffusers = {git = "https://github.com/huggingface/diffusers.git"}
-transformers = "^4.45.2"
-accelerate = "^1.0.1"
+
+# librerías HuggingFace
+diffusers = { git = "https://github.com/huggingface/diffusers.git" }
+transformers = ">=4.45.2"
+accelerate = ">=1.0.1"
+peft = ">=0.17.0"
+
+# backend API
 fastapi = "^0.115.7"
 uvicorn = "^0.34.0"
 python-multipart = "^0.0.20"
+
+# utilidades
 ruff = "^0.9.5"
-datasets = "^3.2.0"
-peft = "^0.15.0"
+datasets = ">=3.2.0"
+
+# solo si usas GPU Nvidia
 bitsandbytes = { version = "^0.45.5", optional = true }
 
 [tool.poetry.extras]
