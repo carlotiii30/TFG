@@ -10,9 +10,13 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.10"
+
+# PyTorch stack
 torch = "^2.2.0"
 torchvision = "0.17.0"
 torchaudio = "2.2.0"
+
+# básicos
 requests = "^2.32.3"
 Pillow = "11.1.0"
 numpy = "<2.0"
@@ -20,8 +24,8 @@ pytorch-pretrained-biggan = "^0.1.1"
 scipy = "^1.15.0"
 nltk = "^3.9.1"
 
-# librerías HuggingFace
-diffusers = { git = "https://github.com/huggingface/diffusers.git" }
+# HuggingFace
+diffusers = "0.27.2"
 transformers = ">=4.45.2"
 accelerate = ">=1.0.1"
 peft = ">=0.17.0"
@@ -35,7 +39,7 @@ python-multipart = "^0.0.20"
 ruff = "^0.9.5"
 datasets = ">=3.2.0"
 
-# solo si usas GPU Nvidia
+# opcional: solo en GPU Nvidia
 bitsandbytes = { version = "^0.45.5", optional = true }
 
 [tool.poetry.extras]
