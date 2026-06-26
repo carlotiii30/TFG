@@ -7,11 +7,11 @@ readme = "README.md"
 
 requires-python = ">=3.10"
 dependencies = [
-    "torch==2.2.2",
-    "torchvision==0.17.2",
-    "torchaudio==2.2.2",
+    "torch=^2.2.2",
+    "torchvision=^0.17.2",
+    "torchaudio=^2.2.2",
     "requests>=2.32.3",
-    "Pillow==11.1.0",
+    "Pillow=^11.1.0",
     "numpy<2.0",
     "pytorch-pretrained-biggan>=0.1.1",
     "scipy>=1.15.0",
