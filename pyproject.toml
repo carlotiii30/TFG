@@ -1,6 +1,6 @@
 [project]
 name = "tfg"
-version = "2.1.0"
+version = "2.3.0"
 description = ""
 authors = [{ name = "Carlota de la Vega", email = "carlotadlavega@gmail.com" }]
 readme = "README.md"
@@ -17,7 +17,7 @@ dependencies = [
     "scipy>=1.15.0",
     "nltk>=3.9.1",
     "diffusers>=0.31.0",
-    "transformers==4.45.2",
+    "transformers>=4.45.2",
     "accelerate==1.0.1",
     "fastapi>=0.115.7",
     "uvicorn>=0.34.0",
